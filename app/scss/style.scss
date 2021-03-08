@@ -1,3 +1,4 @@
+// Initial reset - removes all margins & paddings from all the elements
 *{
     margin: 0;
     padding: 0;
@@ -6,14 +7,78 @@
 body{
     // margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: brown;
+    color: rgb(172, 84, 2);
     line-height: 1.5;
 }
 
 #showcase{
     background-image: url("../images/showcase.jpg");
-    background-size: cover;
-    background-position: center;
+    background-color: #c1c1c1; //Used if the image is unavailable
+    background-size: cover; //to make the image fullscreen and whole image visible
+    background-position: center; //to make the image fullscreen and whole image visible
     height: 100vh;
+    display: flex; //aligns items horizontally, in this case: h1, p, a (default behaviour, can be changed with flex-direction)
+    flex-direction: column; //aligns items vertically
+    //below properties to set h1, p, a to the center of the screen 
+    justify-content: center; //aligns items to the middle of Y axis
+    align-items: flex-end; //aligns items to the right
+    // align-items: center; //aligns items to the middle of X axis
+    text-align: right;
+    padding: 0 20px;
+
+    h1{
+        width: 45vw;
+        line-height: 1;
+    }
+
+    p{
+        width: 40vw;
+        font-size: 1.2rem;
+    }
+
+    .button{
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: rgb(172, 84, 2);
+        border:rgb(172, 84, 2) 2px solid;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin-top: 20px;
+
+        &:hover{
+            background: linear-gradient(to right, rgb(172, 84, 2), rgb(8, 59, 8));
+            // background: rgb(172, 84, 2);
+            color: white;
+        }
+    }
 }
 
+#section-a{
+    padding: 20px;
+    background: linear-gradient(to right, rgb(172, 84, 2), rgb(255, 147, 46));
+    color: white;
+    text-align: justify;
+}
+
+#section-b{
+    padding: 20px;
+    background: #f4f4f4;
+    text-align: justify;
+}
+
+#section-c{
+    display: flex;
+
+    div{
+        padding: 20px;
+
+        &.box-1, &.box-3{
+            background: linear-gradient(to right, rgb(172, 84, 2), rgb(255, 147, 46));
+            color: white;
+        }
+
+        &.box-2{
+            background: #f4f4f4;
+        }
+    }
+}
